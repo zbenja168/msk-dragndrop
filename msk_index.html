@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MSKStudy &ndash; Drag &amp; Drop Games</title>
+<style>
+  :root{--bg:#0a0805;--surface:#14110b;--surface2:#1d1812;--text:#f1f5f9;--muted:#94a3b8;--border:rgba(255,255,255,0.07);}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;min-height:100vh;}
+
+  header{background:linear-gradient(160deg,#1a1305 0%,#2a1f08 50%,#0a0805 100%);border-bottom:1px solid var(--border);padding:44px 24px 36px;text-align:center;position:relative;overflow:hidden;}
+  header::after{content:'\1F52C';position:absolute;font-size:360px;opacity:.025;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;}
+  header h1{font-size:2.4rem;font-weight:800;letter-spacing:-0.5px;background:linear-gradient(135deg,#f8fafc 30%,#84cc16);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px;position:relative;}
+  header p{color:var(--muted);font-size:.9rem;position:relative;}
+  .pills{display:flex;gap:10px;justify-content:center;margin-top:18px;flex-wrap:wrap;position:relative;}
+  .pill{background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:20px;padding:5px 14px;font-size:.78rem;color:var(--muted);}
+  .pill b{color:#84cc16;}
+
+  .search-wrap{max-width:460px;margin:22px auto 0;position:relative;}
+  .search-wrap input{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:10px 44px 10px 18px;color:var(--text);font-size:.85rem;outline:none;transition:.2s;}
+  .search-wrap input:focus{border-color:#84cc16;box-shadow:0 0 0 3px rgba(132, 204, 22, .18);}
+  .search-wrap input::placeholder{color:var(--muted);}
+  .search-ico{position:absolute;right:15px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:.85rem;pointer-events:none;}
+
+  main{max-width:1380px;margin:0 auto;padding:32px 16px 56px;}
+  .no-results{text-align:center;color:var(--muted);padding:60px 20px;font-size:.9rem;display:none;}
+
+  .week{margin-bottom:44px;}
+  .week-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:0 0 22px;padding:14px 18px;border-radius:12px;background:linear-gradient(135deg,rgba(132, 204, 22, .16),rgba(132, 204, 22, .04));border:1px solid rgba(132, 204, 22, .28);}
+  .week-label{font-size:1.15rem;font-weight:800;letter-spacing:-.01em;color:#84cc16;}
+  .week-sub{font-size:.9rem;color:var(--text);opacity:.85;}
+  .week-count{margin-left:auto;font-size:.7rem;color:var(--muted);white-space:nowrap;}
+  @media (max-width:640px){.week-count{margin-left:0;flex-basis:100%;}}
+  .section{margin-bottom:32px;}
+  .section-head{display:flex;align-items:center;gap:10px;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+  .section-icon{font-size:1.2rem;line-height:1;}
+  .section-title{font-size:.95rem;font-weight:700;color:var(--text);}
+  .section-badge{margin-left:auto;background:var(--surface2);border-radius:10px;padding:2px 8px;font-size:.68rem;color:var(--muted);}
+
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:7px;}
+  a.card{background:var(--surface);border:1px solid var(--border);border-radius:9px;padding:11px 12px;text-decoration:none;color:var(--text);display:flex;align-items:flex-start;gap:9px;transition:.15s;}
+  a.card:hover{border-color:var(--c,#84cc16);background:var(--surface2);transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,0,0,.5);}
+  .num{flex-shrink:0;background:var(--c,#84cc16);color:#fff;border-radius:5px;padding:2px 5px;font-size:.6rem;font-weight:800;margin-top:1px;opacity:.9;letter-spacing:.3px;}
+  .ctitle{font-size:.75rem;line-height:1.45;color:var(--text);}
+  .sess-head{margin:6px 0 12px;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+</style>
+<script defer src="https://activetransport.app/static/tool-track.js"></script>
+</head>
+<body>
+
+<header>
+  <h1>MSKStudy</h1>
+  <p>Drag &amp; Drop Study Games &nbsp;&middot;&nbsp; Skin, Musculoskeletal &amp; Connective Tissue</p>
+  <div class="pills">
+    <span class="pill"><b>88</b> games</span>
+    <span class="pill"><b>22</b> source bricks</span>
+    <span class="pill"><b>22</b> sections</span>
+  </div>
+  <div class="search-wrap">
+    <input type="text" id="search" placeholder="Search by topic or number&hellip;" autocomplete="off">
+    <span class="search-ico">&#x2315;</span>
+  </div>
+</header>
+
+<main>
+<div class="no-results" id="noResults">No games match your search.</div>
+
+<div class="week" data-week>
+  <div class="week-head">
+    <span class="week-label">Week 1</span>
+    <span class="week-sub">Back, Spinal Cord, Bone & Muscle Foundations</span>
+    <span class="week-count">12 lectures &middot; 48 games</span>
+  </div>
+
+<div class="sess-head" data-sess>Session 1</div>
+<section class="section" data-section>
+  <div class="section-head">
+    <span class="section-icon">🩸</span>
+    <span class="section-title">Regional Anatomy of the Posterior Abdominal Wall, Back, and Posterior Neck</span>
+    <span class="section-badge">4 games</span>
+  </div>
+  <div class="cards">
+    <a class="card" href="msk_01_extrinsic_back_muscles.html" style="--c:#f59e0b"><span class="num">01</span><span class="ctitle">Extrinsic Back Muscles</span></a>
+    <a class="card" href="msk_02_intrinsic_back_groups.html" style="--c:#f59e0b"><span class="num">02</span><span class="ctitle">Intrinsic Back Muscle Groups</span></a>
+    <a class="card" href="msk_03_abdominal_wall_and_neck.html" style="--c:#f59e0b"><span class="num">03</span><span class="ctitle">Posterior Abdominal Wall and Posterior Neck</span></a>
+    <a class="card" href="msk_04_vertebral_features.html" style="--c:#f59e0b"><span class="num">04</span><span class="ctitle">Vertebrae by Region</span></a>
+  </div>
+</section>
+
+<section class="section" data-section>
+  <div class="section-head">
+    <span class="section-icon">🧬</span>
+    <span class="section-title">Anatomy of the Spinal Cord</span>
+    <span class="section-badge">4 games</span>
+  </div>
+  <div class="cards">
+    <a class="card" href="msk_05_root_landmarks.html" style="--c:#10b981"><span class="num">05</span><span class="ctitle">Dermatome and Myotome Landmarks</span></a>
+    <a class="card" href="msk_06_cord_regions.html" style="--c:#10b981"><span class="num">06</span><span class="ctitle">Spinal Cord Regions</span></a>
+    <a class="card" href="msk_07_cross_section_structures.html" style="--c:#10b981"><span class="num">07</span><span class="ctitle">Cord Cross-Section: Horns and Tracts</span></a>
+    <a class="card" href="msk_08_meningeal_spaces.html" style="--c:#10b981"><span class="num">08</span><span class="ctitle">Meningeal Spaces and Procedures</span></a>
+  </div>
+</section>
+
+<section class="section" data-section>
+  <div class="section-head">
+    <span class="section-icon">⚗️</span>
+    <span class="section-title">Histology of Bone and Cartilage</span>
+    <span class="section-badge">4 games</span>
+  </div>
+  <div class="cards">
+    <a class="card" href="msk_09_bone_regions.html" style="--c:#8b5cf6"><span class="num">09</span><span class="ctitle">Regions and Linings of a Long Bone</span></a>
+    <a class="card" href="msk_10_bone_and_cartilage_cells.html" style="--c:#8b5cf6"><span class="num">10</span><span class="ctitle">Bone and Cartilage Cells</span></a>
+    <a class="card" href="msk_11_matrix_types.html" style="--c:#8b5cf6"><span class="num">11</span><span class="ctitle">Cartilage and Bone Tissue Types</span></a>
+    <a class="card" href="msk_12_growth_plate_zones.html" style="--c:#8b5cf6"><span class="num">12</span><span class="ctitle">Zones of the Epiphyseal Plate</span></a>
+  </div>
+</section>
+
+<section class="section" data-section>
+  <div class="section-head">
+    <span class="section-icon">🔬</span>
+    <span class="section-title">Spine Disorders</span>
+    <span class="section-badge">4 games</span>
+  </div>
+  <div class="cards">
+    <a class="card" href="msk_13_spine_syndromes.html" style="--c:#06b6d4"><span class="num">13</span><span class="ctitle">Clinical Syndromes of Spine Disease</span></a>
+    <a class="card" href="msk_14_spondylo_family.html" style="--c:#06b6d4"><span class="num">14</span><span class="ctitle">Spondylosis, Stenosis, Spondylolysis, Spondylolisthesis</span></a>
+    <a class="card" href="msk_15_spinal_curvatures.html" style="--c:#06b6d4"><span class="num">15</span><span class="ctitle">Normal and Abnormal Spinal Curvatures</span></a>
+    <a class="card" href="msk_16_scoliosis_by_cobb_angle.html" style="--c:#06b6d4"><span class="num">16</span><span class="ctitle">Scoliosis Management by Cobb Angle</span></a>
+  </div>
+</section>
+
+<div class="sess-head" data-sess>Session 2</div>
+<section class="section" data-section>
+  <div class="section-head">
+    <span class="section-icon">🧪</span>
+    <span class="section-title">Development of the Musculoskeletal System</span>
+    <span class="section-badge">4 games</span>
+  </div>
+  <div class="cards">
+    <a class="card" href="msk_17_axial_skeleton_origins.html" style="--c:#ec4899"><span class="num">17</span><span class="ctitle">Vertebrae, Ribs, and Discs</span></a>
+    <a class="card" href="msk_18_limb_development_timeline.html" style="--c:#ec4899"><span class="num">18</span><span class="ctitle">Limb Development Timeline</span></a>
+    <a class="card" href="msk_19_limb_bud_players.html" style="--c:#ec4899"><span class="num">19</span><span class="ctitle">Building the Limb</span></a>
+    <a class="card" href="msk_20_skull_development.html" style="--c:#ec4899"><span class="num">20</span><span class="ctitle">Skull Development</span></a>
+  </div>
+</section>
+
+<section class="section" data-section>
+  <div class="section-head">
+    <span class="section-icon">💊</span>
+    <span class="section-title">Congenital Disorders of the Musculoskeletal System</span>
+    <span class="section-badge">4 games</span>
+  </div>
+  <div class="cards">
+    <a class="card" href="msk_21_congenital_limb_defects.html" style="--c:#84cc16"><span class="num">21</span><span class="ctitle">Congenital Limb Defects</span></a>
+    <a class="card" href="msk_22_ddh_exam_and_treatment.html" style="--c:#84cc16"><span class="num">22</span><span class="ctitle">Hip Dysplasia: Exam and Treatment</span></a>
+    <a class="card" href="msk_23_osteogenesis_imperfecta_types.html" style="--c:#84cc16"><span class="num">23</span><span class="ctitle">Osteogenesis Imperfecta Types</span></a>
+    <a class="card" href="msk_24_congenital_bone_and_joint_disorders.html" style="--c:#84cc16"><span class="num">24</span><span class="ctitle">Congenital Bone and Joint Disorders</span></a>
+  </div>
+</section>
+
+<section class="section" data-section>
+  <div class="section-head">
+    <span class="section-icon">🩺</span>
+    <span class="section-title">Ehlers-Danlos Syndrome and Marfan Syndrome</span>
+    <span class="section-badge">4 games</span>
+  </div>
+  <div class="cards">
+    <a class="card" href="msk_25_connective_proteins.html" style="--c:#f97316"><span class="num">25</span><span class="ctitle">Connective Tissue Proteins and Their Disorders</span></a>
+    <a class="card" href="msk_26_eds_findings.html" style="--c:#f97316"><span class="num">26</span><span class="ctitle">Ehlers-Danlos Findings</span></a>
+    <a class="card" href="msk_27_supportive_management.html" style="--c:#f97316"><span class="num">27</span><span class="ctitle">Supportive Management in EDS and Marfan</span></a>
+    <a class="card" href="msk_28_marfan_systems.html" style="--c:#f97316"><span class="num">28</span><span class="ctitle">Marfan Syndrome by Organ System</span></a>
+  </div>
+</section>
+
+<section class="section" data-section>
+  <div class="section-head">
+    <span class="section-icon">⚡</span>
+    <span class="section-title">Acquired Bone Disorders</span>
+    <span class="section-badge">4 games</span>
+  </div>
+  <div class="cards">
+    <a class="card" href="msk_29_bone_lab_patterns.html" style="--c:#3b82f6"><span class="num">29</span><span class="ctitle">Acquired Bone Disorder Lab Patterns</span></a>
+    <a class="card" href="msk_30_osteoporosis_drugs.html" style="--c:#3b82f6"><span class="num">30</span><span class="ctitle">Osteoporosis Pharmacotherapy</span></a>
+    <a class="card" href="msk_31_bone_disorder_hallmarks.html" style="--c:#3b82f6"><span class="num">31</span><span class="ctitle">Hallmarks of Acquired Bone Disorders</span></a>
+    <a class="card" href="msk_32_paget_stages.html" style="--c:#3b82f6"><span class="num">32</span><span class="ctitle">The Four Stages of Paget Disease</span></a>
+  </div>
+</section>
+
+<div class="sess-head" data-sess>Session 3</div>
+<section class="section" data-section>
+  <div class="section-head">
+    <span class="section-icon">🩸</span>
+    <span class="section-title">Mechanics of Muscle Force Production</span>
+    <span class="section-badge">4 games</span>
+  </div>
+  <div class="cards">
+    <a class="card" href="msk_33_length_tension.html" style="--c:#f59e0b"><span class="num">33</span><span class="ctitle">Length-Tension Relationship</span></a>
+    <a class="card" href="msk_34_isotonic_twitch_phases.html" style="--c:#f59e0b"><span class="num">34</span><span class="ctitle">Phases of an Isotonic Contraction</span></a>
+    <a class="card" href="msk_35_proprioceptors_motor_neurons.html" style="--c:#f59e0b"><span class="num">35</span><span class="ctitle">Spindles, Tendon Organs, and Motor Neurons</span></a>
+    <a class="card" href="msk_36_nmj_drugs_toxins.html" style="--c:#f59e0b"><span class="num">36</span><span class="ctitle">Drugs and Toxins at the NMJ</span></a>
+  </div>
+</section>
+
+<section class="section" data-section>
+  <div class="section-head">
+    <span class="section-icon">🧬</span>
+    <span class="section-title">Neuromuscular Junction Disorders</span>
+    <span class="section-badge">4 games</span>
+  </div>
+  <div class="cards">
+    <a class="card" href="msk_37_nmj_disorders_vs_gbs.html" style="--c:#10b981"><span class="num">37</span><span class="ctitle">MG vs Lambert-Eaton vs Botulism vs GBS</span></a>
+    <a class="card" href="msk_38_mg_diagnostic_tests.html" style="--c:#10b981"><span class="num">38</span><span class="ctitle">Myasthenia Gravis Workup</span></a>
+    <a class="card" href="msk_39_mg_les_treatments.html" style="--c:#10b981"><span class="num">39</span><span class="ctitle">Treating MG and Lambert-Eaton</span></a>
+    <a class="card" href="msk_40_botulism_forms.html" style="--c:#10b981"><span class="num">40</span><span class="ctitle">Forms of Botulism</span></a>
+  </div>
+</section>
+
+<section class="section" data-section>
+  <div class="section-head">
+    <span class="section-icon">⚗️</span>
+    <span class="section-title">Muscle Metabolism</span>
+    <span class="section-badge">4 games</span>
+  </div>
+  <div class="cards">
+    <a class="card" href="msk_41_atp_energy_systems.html" style="--c:#8b5cf6"><span class="num">41</span><span class="ctitle">Muscle ATP Energy Systems</span></a>
+    <a class="card" href="msk_42_fiber_type_tasks.html" style="--c:#8b5cf6"><span class="num">42</span><span class="ctitle">Fiber Types at Work</span></a>
+    <a class="card" href="msk_43_metabolism_molecules.html" style="--c:#8b5cf6"><span class="num">43</span><span class="ctitle">Key Molecules of Muscle Metabolism</span></a>
+    <a class="card" href="msk_44_metabolic_muscle_disorders.html" style="--c:#8b5cf6"><span class="num">44</span><span class="ctitle">Metabolic Muscle Disorders and Fatigue</span></a>
+  </div>
+</section>
+
+<section class="section" data-section>
+  <div class="section-head">
+    <span class="section-icon">🔬</span>
+    <span class="section-title">Skeletal Muscle Adaptations</span>
+    <span class="section-badge">4 games</span>
+  </div>
+  <div class="cards">
+    <a class="card" href="msk_45_regeneration_stages.html" style="--c:#06b6d4"><span class="num">45</span><span class="ctitle">Stages of Muscle Regeneration</span></a>
+    <a class="card" href="msk_46_adaptation_signaling.html" style="--c:#06b6d4"><span class="num">46</span><span class="ctitle">Signals Behind Muscle Adaptation</span></a>
+    <a class="card" href="msk_47_training_adaptations.html" style="--c:#06b6d4"><span class="num">47</span><span class="ctitle">Endurance vs Resistance Adaptations</span></a>
+    <a class="card" href="msk_48_muscle_wasting_conditions.html" style="--c:#06b6d4"><span class="num">48</span><span class="ctitle">Conditions of Muscle Wasting</span></a>
+  </div>
+</section>
+</div>
+
+<div class="week" data-week>
+  <div class="week-head">
+    <span class="week-label">Week 2</span>
+    <span class="week-sub">Upper Limb & Muscle Disorders</span>
+    <span class="week-count">10 lectures &middot; 40 games</span>
+  </div>
+
+<div class="sess-head" data-sess>Session 1</div>
+<section class="section" data-section>
+  <div class="section-head">
+    <span class="section-icon">🧪</span>
+    <span class="section-title">Functional Anatomy of the Shoulder &amp; Arm</span>
+    <span class="section-badge">4 games</span>
+  </div>
+  <div class="cards">
+    <a class="card" href="msk_49_shoulder_nerve_injuries.html" style="--c:#ec4899"><span class="num">49</span><span class="ctitle">Shoulder and Arm Nerve Injuries</span></a>
+    <a class="card" href="msk_50_rotator_cuff.html" style="--c:#ec4899"><span class="num">50</span><span class="ctitle">The Rotator Cuff (SITS)</span></a>
+    <a class="card" href="msk_51_scapular_movements.html" style="--c:#ec4899"><span class="num">51</span><span class="ctitle">Moving the Scapula</span></a>
+    <a class="card" href="msk_52_arm_muscles_and_movers.html" style="--c:#ec4899"><span class="num">52</span><span class="ctitle">Arm Muscles and Major Shoulder Movers</span></a>
+  </div>
+</section>
+
+<section class="section" data-section>
+  <div class="section-head">
+    <span class="section-icon">💊</span>
+    <span class="section-title">Vasculature and Lymphatics of the Upper Extremities</span>
+    <span class="section-badge">4 games</span>
+  </div>
+  <div class="cards">
+    <a class="card" href="msk_53_arterial_segments.html" style="--c:#84cc16"><span class="num">53</span><span class="ctitle">Upper-Limb Arterial Segments</span></a>
+    <a class="card" href="msk_54_collateral_networks.html" style="--c:#84cc16"><span class="num">54</span><span class="ctitle">Collateral Networks of the Upper Limb</span></a>
+    <a class="card" href="msk_55_venous_return.html" style="--c:#84cc16"><span class="num">55</span><span class="ctitle">Venous Return From the Upper Limb</span></a>
+    <a class="card" href="msk_56_lymphatic_drainage.html" style="--c:#84cc16"><span class="num">56</span><span class="ctitle">Lymphatic Drainage of the Upper Limb</span></a>
+  </div>
+</section>
+
+<div class="sess-head" data-sess>Session 2</div>
+<section class="section" data-section>
+  <div class="section-head">
+    <span class="section-icon">🩺</span>
+    <span class="section-title">Inflammatory Myopathies</span>
+    <span class="section-badge">4 games</span>
+  </div>
+  <div class="cards">
+    <a class="card" href="msk_57_myositis_comparison.html" style="--c:#f97316"><span class="num">57</span><span class="ctitle">Polymyositis vs Dermatomyositis vs IBM vs PMR</span></a>
+    <a class="card" href="msk_58_myopathy_mimics.html" style="--c:#f97316"><span class="num">58</span><span class="ctitle">Conditions That Mimic Myositis</span></a>
+    <a class="card" href="msk_59_dermatomyositis_skin.html" style="--c:#f97316"><span class="num">59</span><span class="ctitle">Skin and Vascular Signs of Dermatomyositis</span></a>
+    <a class="card" href="msk_60_myopathy_therapies.html" style="--c:#f97316"><span class="num">60</span><span class="ctitle">Treatments in Myositis and Its Mimics</span></a>
+  </div>
+</section>
+
+<section class="section" data-section>
+  <div class="section-head">
+    <span class="section-icon">⚡</span>
+    <span class="section-title">Muscular Dystrophy</span>
+    <span class="section-badge">4 games</span>
+  </div>
+  <div class="cards">
+    <a class="card" href="msk_61_dystrophy_genetics.html" style="--c:#3b82f6"><span class="num">61</span><span class="ctitle">Muscular Dystrophy Genetics</span></a>
+    <a class="card" href="msk_62_dystrophy_course.html" style="--c:#3b82f6"><span class="num">62</span><span class="ctitle">Course and Extramuscular Features</span></a>
+    <a class="card" href="msk_63_membrane_proteins.html" style="--c:#3b82f6"><span class="num">63</span><span class="ctitle">Dystrophy Proteins and Their Jobs</span></a>
+    <a class="card" href="msk_64_md_therapies.html" style="--c:#3b82f6"><span class="num">64</span><span class="ctitle">Muscular Dystrophy Therapies</span></a>
+  </div>
+</section>
+
+<section class="section" data-section>
+  <div class="section-head">
+    <span class="section-icon">🩸</span>
+    <span class="section-title">Traumatic Muscle Injury</span>
+    <span class="section-badge">4 games</span>
+  </div>
+  <div class="cards">
+    <a class="card" href="msk_65_muscle_injury_types.html" style="--c:#f59e0b"><span class="num">65</span><span class="ctitle">Traumatic Muscle Injuries</span></a>
+    <a class="card" href="msk_66_fasciotomy_compartments.html" style="--c:#f59e0b"><span class="num">66</span><span class="ctitle">Fasciotomy: Compartments to Release</span></a>
+    <a class="card" href="msk_67_five_ps.html" style="--c:#f59e0b"><span class="num">67</span><span class="ctitle">The 5 Ps of Compartment Syndrome</span></a>
+    <a class="card" href="msk_68_rhabdo_labs.html" style="--c:#f59e0b"><span class="num">68</span><span class="ctitle">Rhabdomyolysis Labs and Management</span></a>
+  </div>
+</section>
+
+<section class="section" data-section>
+  <div class="section-head">
+    <span class="section-icon">🧬</span>
+    <span class="section-title">Common Tendon, Bursa, and Joint Capsule Disorders</span>
+    <span class="section-badge">4 games</span>
+  </div>
+  <div class="cards">
+    <a class="card" href="msk_69_shoulder_disorders.html" style="--c:#10b981"><span class="num">69</span><span class="ctitle">Shoulder Disorders</span></a>
+    <a class="card" href="msk_70_rotator_cuff_testing.html" style="--c:#10b981"><span class="num">70</span><span class="ctitle">Testing the Rotator Cuff</span></a>
+    <a class="card" href="msk_71_tendon_disorders.html" style="--c:#10b981"><span class="num">71</span><span class="ctitle">Tendon and Tendon Sheath Disorders</span></a>
+    <a class="card" href="msk_72_cysts_and_bursae.html" style="--c:#10b981"><span class="num">72</span><span class="ctitle">Cysts and Bursitis</span></a>
+  </div>
+</section>
+
+<div class="sess-head" data-sess>Session 3</div>
+<section class="section" data-section>
+  <div class="section-head">
+    <span class="section-icon">⚗️</span>
+    <span class="section-title">Functional Anatomy of the Forearm &amp; Hand</span>
+    <span class="section-badge">4 games</span>
+  </div>
+  <div class="cards">
+    <a class="card" href="msk_73_anterior_forearm_muscles.html" style="--c:#8b5cf6"><span class="num">73</span><span class="ctitle">Anterior Forearm Compartment</span></a>
+    <a class="card" href="msk_74_posterior_forearm_muscles.html" style="--c:#8b5cf6"><span class="num">74</span><span class="ctitle">Posterior Forearm Compartment</span></a>
+    <a class="card" href="msk_75_intrinsic_hand_muscles.html" style="--c:#8b5cf6"><span class="num">75</span><span class="ctitle">Intrinsic Muscles of the Hand</span></a>
+    <a class="card" href="msk_76_nerve_injury_patterns.html" style="--c:#8b5cf6"><span class="num">76</span><span class="ctitle">Upper Limb Nerve Injury Patterns</span></a>
+  </div>
+</section>
+
+<section class="section" data-section>
+  <div class="section-head">
+    <span class="section-icon">🔬</span>
+    <span class="section-title">Upper Extremity Injuries</span>
+    <span class="section-badge">4 games</span>
+  </div>
+  <div class="cards">
+    <a class="card" href="msk_77_plexus_and_radial_levels.html" style="--c:#06b6d4"><span class="num">77</span><span class="ctitle">Brachial Plexus and Radial Nerve Lesion Levels</span></a>
+    <a class="card" href="msk_78_individual_nerve_injuries.html" style="--c:#06b6d4"><span class="num">78</span><span class="ctitle">Individual Peripheral Nerve Injuries</span></a>
+    <a class="card" href="msk_79_ligament_tendon_injuries.html" style="--c:#06b6d4"><span class="num">79</span><span class="ctitle">Ligament and Tendon Injuries</span></a>
+    <a class="card" href="msk_80_fractures_dislocations_at_risk.html" style="--c:#06b6d4"><span class="num">80</span><span class="ctitle">Fractures and Dislocations: What Is at Risk</span></a>
+  </div>
+</section>
+
+<section class="section" data-section>
+  <div class="section-head">
+    <span class="section-icon">🧪</span>
+    <span class="section-title">Upper Extremity Nerve Entrapment Syndromes</span>
+    <span class="section-badge">4 games</span>
+  </div>
+  <div class="cards">
+    <a class="card" href="msk_81_entrapment_syndrome_comparison.html" style="--c:#ec4899"><span class="num">81</span><span class="ctitle">Carpal vs Cubital vs Guyon vs Peripheral Neuropathy</span></a>
+    <a class="card" href="msk_82_tunnel_anatomy.html" style="--c:#ec4899"><span class="num">82</span><span class="ctitle">Tunnel Walls and Roofs</span></a>
+    <a class="card" href="msk_83_diagnostic_tests.html" style="--c:#ec4899"><span class="num">83</span><span class="ctitle">Diagnosing Entrapment Syndromes</span></a>
+    <a class="card" href="msk_84_sensory_clues.html" style="--c:#ec4899"><span class="num">84</span><span class="ctitle">Sensory Clues That Localize the Lesion</span></a>
+  </div>
+</section>
+
+<section class="section" data-section>
+  <div class="section-head">
+    <span class="section-icon">💊</span>
+    <span class="section-title">Pharmacologic Treatment of Musculoskeletal Pain</span>
+    <span class="section-badge">4 games</span>
+  </div>
+  <div class="cards">
+    <a class="card" href="msk_85_muscle_relaxants.html" style="--c:#84cc16"><span class="num">85</span><span class="ctitle">Skeletal Muscle Relaxants</span></a>
+    <a class="card" href="msk_86_analgesics.html" style="--c:#84cc16"><span class="num">86</span><span class="ctitle">Analgesics for Musculoskeletal Pain</span></a>
+    <a class="card" href="msk_87_clinical_situations.html" style="--c:#84cc16"><span class="num">87</span><span class="ctitle">Choosing Therapy by Clinical Situation</span></a>
+    <a class="card" href="msk_88_patient_factors.html" style="--c:#84cc16"><span class="num">88</span><span class="ctitle">Patient Factors That Change the Choice</span></a>
+  </div>
+</section>
+</div>
+
+</main>
+
+<script>
+document.getElementById('search').addEventListener('input', function() {
+  const q = this.value.toLowerCase().trim();
+  let anyVisible = false;
+  document.querySelectorAll('.section').forEach(sec => {
+    let secVisible = false;
+    sec.querySelectorAll('.card').forEach(c => {
+      const match = c.textContent.toLowerCase().includes(q);
+      c.style.display = match ? '' : 'none';
+      if (match) secVisible = true;
+    });
+    sec.style.display = secVisible ? '' : 'none';
+    if (secVisible) anyVisible = true;
+  });
+  // A week heading with nothing left under it is just noise while searching.
+  document.querySelectorAll('.week').forEach(wk => {
+    const has = Array.from(wk.querySelectorAll('.section'))
+      .some(s => s.style.display !== 'none');
+    wk.style.display = has ? '' : 'none';
+  });
+  document.getElementById('noResults').style.display = anyVisible ? 'none' : 'block';
+});
+</script>
+<script>
+// Week / Session headers (class schedule): hide any header whose sections are
+// all filtered out by the search box. Registered after the search handler.
+(function () {
+  var box = document.getElementById('search');
+  if (!box) return;
+  function vis(el) { return el.style.display !== 'none'; }
+  box.addEventListener('input', function () {
+    document.querySelectorAll('[data-sess]').forEach(function (h) {
+      var n = h.nextElementSibling, any = false;
+      while (n && !n.hasAttribute('data-sess')) {
+        if (n.hasAttribute('data-section') && vis(n)) { any = true; break; }
+        n = n.nextElementSibling;
+      }
+      h.style.display = any ? '' : 'none';
+    });
+    document.querySelectorAll('[data-week]').forEach(function (w) {
+      var any = Array.prototype.some.call(w.querySelectorAll('[data-section]'), vis);
+      w.style.display = any ? '' : 'none';
+    });
+  });
+})();
+</script>
+</body>
+</html>
