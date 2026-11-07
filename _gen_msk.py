@@ -36,6 +36,7 @@ ENDO_IDENTITY = "#84cc16"  # lime for index/header
 WEEKS = [
     ("Week 1", "Back, Spinal Cord, Bone & Muscle Foundations", range(1, 13)),
     ("Week 2", "Upper Limb & Muscle Disorders", range(13, 23)),
+    ("Week 3", "Lower Limb, Bone Infection & Tumors", range(23, 32)),
 ]
 
 
@@ -54,7 +55,7 @@ ICONS = ["🩸", "🧬", "⚗️", "🔬", "🧪", "💊", "🩺", "⚡"]
 def load_bricks():
     """Import all brick_NN.py files in number order, then the cross-brick synthesis at the end."""
     bricks = []
-    for i in range(1, 23):
+    for i in range(1, 32):
         path = os.path.join(DATA_DIR, f"brick_{i:02d}.py")
         if not os.path.exists(path):
             print(f"  WARNING: missing {path}")
