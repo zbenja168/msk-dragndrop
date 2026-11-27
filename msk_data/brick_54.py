@@ -42,6 +42,7 @@ BRICK = {
         },
         {
             "slug": "rosacea_subtypes",
+            "images": {"Papulopustular": "pic_img/msk-54-030.jpg", "Phymatous": "pic_img/msk-54-031.jpg"},
             "title": "The Four Rosacea Subtypes",
             "subtitle": "Match each rosacea subtype to its hallmark findings, distinguishing clue, and treatment",
             "categories": ["Hallmark findings", "Distinguishing clue", "Treatment"],

@@ -80,6 +80,7 @@ BRICK = {
         },
         {
             "slug": "caspar_criteria",
+            "images": {"Nail psoriasis": "pic_img/msk-50-026.jpg"},
             "title": "CASPAR Criteria for Psoriatic Arthritis",
             "subtitle": "In a patient with inflammatory arthritis, match each criterion to its example and points",
             "categories": ["Example finding", "Points"],

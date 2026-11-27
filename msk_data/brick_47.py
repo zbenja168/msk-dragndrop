@@ -4,6 +4,7 @@ BRICK = {
     "games": [
         {
             "slug": "four_blistering_diseases",
+            "images": {"Pemphigus vulgaris": "pic_img/msk-47-027.jpg", "Bullous pemphigoid": "pic_img/msk-47-028.jpg", "Dermatitis herpetiformis": "pic_img/msk-47-030.jpg", "Linear IgA bullous dermatosis": "pic_img/msk-47-032.jpg"},
             "title": "The Four Autoimmune Blistering Diseases",
             "subtitle": "Match each disease to its antibody and target, blister level, and classic lesions",
             "categories": ["Antibody and target", "Blister level", "Classic lesions"],
@@ -32,6 +33,7 @@ BRICK = {
         },
         {
             "slug": "immunofluorescence_patterns",
+            "images": {"Pemphigus vulgaris": "pic_img/msk-47-027.jpg", "Bullous pemphigoid": "pic_img/msk-47-029.jpg", "Dermatitis herpetiformis": "pic_img/msk-47-031.jpg", "Linear IgA bullous dermatosis": "pic_img/msk-47-033.jpg"},
             "title": "Reading Direct Immunofluorescence",
             "subtitle": "Match each disease to its DIF pattern, serology, and lesional histology",
             "categories": ["DIF pattern", "Serology", "Lesional histology"],
@@ -60,6 +62,7 @@ BRICK = {
         },
         {
             "slug": "risk_triggers_treatment",
+            "images": {"Pemphigus vulgaris": "pic_img/msk-47-027.jpg", "Bullous pemphigoid": "pic_img/msk-47-028.jpg", "Dermatitis herpetiformis": "pic_img/msk-47-030.jpg", "Linear IgA bullous dermatosis": "pic_img/msk-47-032.jpg"},
             "title": "Who Gets It, What Triggers It, How to Treat It",
             "subtitle": "Match each disease to its typical patient, drug or dietary trigger, and first-line therapy",
             "categories": ["Typical patient", "Trigger", "First-line therapy"],

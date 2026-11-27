@@ -32,6 +32,7 @@ BRICK = {
         },
         {
             "slug": "bcc_subtypes",
+            "images": {"Nodular BCC": "pic_img/msk-42-032.jpg"},
             "title": "Basal Cell Carcinoma Subtypes",
             "subtitle": "Match each BCC subtype to its appearance and a distinguishing point",
             "categories": ["Appearance", "Distinguishing point"],
@@ -60,6 +61,7 @@ BRICK = {
         },
         {
             "slug": "scc_spectrum",
+            "images": {"Actinic keratosis": "pic_img/msk-42-037.jpg", "Bowen disease (SCC in situ)": "pic_img/msk-42-038.jpg", "Invasive SCC": "pic_img/msk-42-039.jpg", "Keratoacanthoma": "pic_img/msk-42-036.jpg"},
             "title": "From Actinic Keratosis to Invasive SCC",
             "subtitle": "Match each lesion to its clinical look, histology and treatment",
             "categories": ["Clinical appearance", "Histology", "Treatment"],

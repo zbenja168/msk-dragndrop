@@ -37,6 +37,7 @@ BRICK = {
         },
         {
             "slug": "chronic_sun_damage",
+            "images": {"Cutis rhomboidalis nuchae": "pic_img/msk-38-029.jpg", "Poikiloderma of Civatte": "pic_img/msk-38-030.jpg", "Actinic keratoses": "pic_img/msk-42-037.jpg"},
             "title": "Chronic Sun Damage Findings",
             "subtitle": "Match each photoaging finding to its appearance and location",
             "categories": ["Appearance", "Typical location"],
@@ -69,6 +70,7 @@ BRICK = {
         },
         {
             "slug": "photodermatoses",
+            "images": {"Porphyria cutanea tarda": "pic_img/msk-38-031.jpg"},
             "title": "Sun-Triggered Dermatoses",
             "subtitle": "Compare the photodermatoses by cause, look, culprits and management",
             "categories": ["Cause", "Clinical picture", "Classic culprits or risks", "Key test or treatment"],

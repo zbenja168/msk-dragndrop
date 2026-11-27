@@ -74,6 +74,7 @@ BRICK = {
         },
         {
             "slug": "dermatomyositis_skin",
+            "images": {"Heliotrope rash": "pic_img/msk-51-029.jpg", "Gottron papules": "pic_img/msk-51-030.jpg"},
             "title": "Skin and Vascular Signs of Dermatomyositis",
             "subtitle": "Match each sign to its appearance, location, and distinguishing note",
             "categories": ["Appearance", "Location", "Distinguishing note"],

@@ -4,6 +4,7 @@ BRICK = {
     "games": [
         {
             "slug": "primary_lesions",
+            "images": {"Wheal": "pic_img/msk-37-028.jpg", "Bulla": "pic_img/msk-37-029.jpg"},
             "title": "Primary Skin Lesions",
             "subtitle": "Match each primary lesion to its morphology, size and lecture example",
             "categories": ["Morphology", "Size", "Lecture example"],
@@ -42,6 +43,7 @@ BRICK = {
         },
         {
             "slug": "secondary_lesions",
+            "images": {"Lichenification": "pic_img/msk-37-030.jpg", "Excoriation": "pic_img/msk-49-029.jpg"},
             "title": "Secondary Skin Lesions",
             "subtitle": "Match each secondary change to its definition, key feature and lecture example",
             "categories": ["Definition", "Key feature", "Lecture example"],
@@ -80,6 +82,7 @@ BRICK = {
         },
         {
             "slug": "arrangement_terms",
+            "images": {"Annular": "pic_img/msk-37-031.jpg", "Grouped": "pic_img/msk-37-032.jpg"},
             "title": "Arrangement (Configuration)",
             "subtitle": "Match each arrangement term to its pattern and lecture example",
             "categories": ["Pattern on the skin", "Lecture example"],

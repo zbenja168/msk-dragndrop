@@ -4,6 +4,7 @@ BRICK = {
     "games": [
         {
             "slug": "organisms_and_clues",
+            "images": {"Staphylococcus aureus": "pic_img/mipic-286.jpg", "Borrelia burgdorferi": "pic_img/mipic-368.jpg"},
             "title": "Septic Arthritis Organisms",
             "subtitle": "Match each organism to its typical patient or exposure and its distinguishing clue",
             "categories": ["Typical patient or exposure", "Distinguishing clue"],

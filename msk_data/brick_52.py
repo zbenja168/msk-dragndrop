@@ -4,6 +4,7 @@ BRICK = {
     "games": [
         {
             "slug": "mf_clinical_stages",
+            "images": {"Patch stage": "pic_img/msk-52-027.jpg", "Tumor stage": "pic_img/msk-52-028.jpg"},
             "title": "Mycosis Fungoides Clinical Stages",
             "subtitle": "Match each MF stage to its appearance and its place in the sequence",
             "categories": ["Clinical appearance", "Place in progression"],
@@ -28,6 +29,7 @@ BRICK = {
         },
         {
             "slug": "ctcl_path_and_lab_findings",
+            "images": {"Pautrier microabscess": "pic_img/msk-52-030.jpg", "Sezary cell": "pic_img/msk-52-029.jpg"},
             "title": "CTCL Pathology and Laboratory Findings",
             "subtitle": "Match each finding to what it is and how it is detected",
             "categories": ["What it is", "How it is found"],

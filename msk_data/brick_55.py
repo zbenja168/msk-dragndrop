@@ -42,6 +42,7 @@ BRICK = {
         },
         {
             "slug": "skin_parasitic_infections",
+            "images": {"Cutaneous larva migrans": "pic_img/msk-55-032.jpg", "Chagas disease": "pic_img/msk-55-034.jpg"},
             "title": "Cutaneous Parasitic Infections",
             "subtitle": "Match each infection to its organism, how it is acquired and its skin finding",
             "categories": ["Organism", "How acquired", "Skin finding"],
@@ -75,6 +76,7 @@ BRICK = {
         },
         {
             "slug": "bites_and_stings",
+            "images": {"Brown recluse spider": "pic_img/msk-55-037.jpg"},
             "title": "Bites and Stings",
             "subtitle": "Match each arthropod to its typical skin finding and clinical pearl",
             "categories": ["Typical skin finding", "Clinical pearl"],
@@ -107,6 +109,7 @@ BRICK = {
         },
         {
             "slug": "tick_and_animal_bite_infections",
+            "images": {"Lyme disease": "pic_img/msk-55-035.jpg"},
             "title": "Tick-Borne and Bite-Wound Infections",
             "subtitle": "Match each exposure to its organism, exposure detail and hallmark feature",
             "categories": ["Key organism", "Exposure detail", "Hallmark feature"],

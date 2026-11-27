@@ -4,6 +4,7 @@ BRICK = {
     "games": [
         {
             "slug": "tinea_by_site",
+            "images": {"Tinea corporis": "pic_img/mipic-169.jpg", "Tinea cruris": "pic_img/msk-40-026.jpg", "Tinea unguium": "pic_img/mipic-178.jpg"},
             "title": "Tinea by Body Site",
             "subtitle": "Match each tinea to its typical patient, classic finding and exam clue",
             "categories": ["Typical patient", "Classic finding", "Exam clue"],
@@ -42,6 +43,7 @@ BRICK = {
         },
         {
             "slug": "fungal_infections_compared",
+            "images": {"Pityriasis versicolor": "pic_img/msk-40-022.jpg", "Dermatophyte tinea": "pic_img/msk-40-027.jpg"},
             "title": "Cutaneous Fungal Infections Compared",
             "subtitle": "Match each infection to its organism, lab finding, lesion and treatment",
             "categories": ["Organism", "Diagnostic finding", "Typical lesion", "Treatment"],
@@ -106,6 +108,7 @@ BRICK = {
         },
         {
             "slug": "candida_forms",
+            "images": {"Candida intertrigo": "pic_img/msk-40-029.jpg"},
             "title": "Forms of Candida Infection",
             "subtitle": "Match each Candida presentation to its location and its clue or driver",
             "categories": ["Location", "Clue or driver"],

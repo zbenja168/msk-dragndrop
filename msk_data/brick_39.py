@@ -4,6 +4,7 @@ BRICK = {
     "games": [
         {
             "slug": "hypopigmentation_disorders",
+            "images": {"Piebaldism": "pic_img/msk-39-022.jpg", "Vitiligo": "pic_img/msk-39-023.jpg"},
             "title": "Albinism vs Piebaldism vs Vitiligo",
             "subtitle": "Match each loss-of-pigment disorder to its mechanism, onset and pattern, and inheritance or association",
             "categories": ["Mechanism", "Onset and pattern", "Inheritance or association"],
@@ -32,6 +33,7 @@ BRICK = {
         },
         {
             "slug": "albinism_subtypes",
+            "images": {"Chediak-Higashi syndrome": "pic_img/impic-064.jpg"},
             "title": "Albinism Genetics",
             "subtitle": "Match each albinism form to its defect and key fact",
             "categories": ["Defect", "Key fact"],
@@ -60,6 +62,7 @@ BRICK = {
         },
         {
             "slug": "hyperpigmentation_disorders",
+            "images": {"Erythema ab igne": "pic_img/msk-39-027.jpg", "Dermal melanocytosis": "pic_img/msk-39-026.jpg", "Acanthosis nigricans": "pic_img/bopic-059.jpg"},
             "title": "Benign Hyperpigmentation",
             "subtitle": "Match each hyperpigmented disorder to its look and site, its cause, and its management",
             "categories": ["Appearance and site", "Cause or association", "Course or management"],
@@ -93,6 +96,7 @@ BRICK = {
         },
         {
             "slug": "brown_macules",
+            "images": {"Cafe-au-lait macule": "pic_img/msk-39-024.jpg", "Addison disease pigmentation": "pic_img/msk-39-025.jpg"},
             "title": "Lentigines, Freckles and Cafe-au-lait Macules",
             "subtitle": "Match each brown macule to its typical patient, its relation to sun, and its key clue",
             "categories": ["Typical patient", "Relation to sun", "Key clue"],

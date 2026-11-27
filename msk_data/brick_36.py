@@ -4,6 +4,7 @@ BRICK = {
     "games": [
         {
             "slug": "epidermal_layers",
+            "images": {"Stratum spinosum": "pic_img/msk-36-032.jpg"},
             "title": "Layers of the Epidermis",
             "subtitle": "Match each epidermal layer to its position, contents and distinguishing feature",
             "categories": ["Position", "Cells or contents", "Distinguishing feature"],
@@ -65,6 +66,7 @@ BRICK = {
         },
         {
             "slug": "skin_adnexa",
+            "images": {"Apocrine sweat gland": "pic_img/msk-36-033.jpg"},
             "title": "Glands and Adnexa of the Skin",
             "subtitle": "Match each adnexal structure to its output, location, connection and role",
             "categories": ["Output or mechanism", "Where found", "Opens into or attaches to", "Main role"],

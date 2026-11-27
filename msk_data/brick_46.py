@@ -4,6 +4,7 @@ BRICK = {
     "games": [
         {
             "slug": "lichenoid_dermatoses",
+            "images": {"Lichen planus": "pic_img/msk-46-032.jpg", "Lichen striatus": "pic_img/msk-46-033.jpg"},
             "title": "The Four Lichenoid Dermatoses",
             "subtitle": "Match each lichenoid disease to its patient, appearance, clue and treatment",
             "categories": ["Typical patient", "Appearance and site", "Distinguishing clue", "Treatment"],
@@ -36,6 +37,7 @@ BRICK = {
         },
         {
             "slug": "annular_granulomatous_periorificial",
+            "images": {"Granuloma annulare": "pic_img/msk-46-035.jpg", "Sarcoidosis": "pic_img/msk-46-036.jpg", "Acrodermatitis enteropathica": "pic_img/msk-46-037.jpg"},
             "title": "Pityriasis Rosea, Granulomas and Periorificial Disease",
             "subtitle": "Match each disease to its hallmark presentation, key association and treatment",
             "categories": ["Hallmark presentation", "Key association", "Treatment"],
@@ -69,6 +71,7 @@ BRICK = {
         },
         {
             "slug": "drug_reactions",
+            "images": {"Stevens-Johnson syndrome": "pic_img/mipic-358.jpg", "Toxic epidermal necrolysis": "pic_img/msk-46-038.jpg"},
             "title": "Medication Reactions",
             "subtitle": "Match each drug reaction to its onset, hallmark, main culprits and treatment",
             "categories": ["Onset or pattern", "Hallmark", "Main culprits", "Treatment"],
@@ -107,6 +110,7 @@ BRICK = {
         },
         {
             "slug": "triggers_and_outcomes",
+            "images": {"Toxic epidermal necrolysis": "pic_img/msk-46-038.jpg"},
             "title": "Triggers and Key Outcomes",
             "subtitle": "Match each condition to its linked agent or factor and its key outcome",
             "categories": ["Linked agent or factor", "Key outcome or sequela"],

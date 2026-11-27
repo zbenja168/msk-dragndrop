@@ -4,6 +4,7 @@ BRICK = {
     "games": [
         {
             "slug": "acquired_nevus_types",
+            "images": {"Cafe-au-lait macule": "pic_img/msk-39-024.jpg"},
             "title": "Acquired Nevi and Look-Alikes",
             "subtitle": "Match each pigmented lesion to its appearance and its melanocyte or melanin feature",
             "categories": ["Clinical appearance", "Key histologic feature"],
@@ -32,6 +33,7 @@ BRICK = {
         },
         {
             "slug": "nevus_variants",
+            "images": {"Blue nevus": "pic_img/msk-44-029.jpg", "Halo nevus": "pic_img/msk-44-030.jpg"},
             "title": "Nevus Variants and Their Risk",
             "subtitle": "Match each nevus to its defining feature and its management or risk",
             "categories": ["Defining feature", "Risk or management"],
@@ -60,6 +62,7 @@ BRICK = {
         },
         {
             "slug": "cysts_and_growths",
+            "images": {"Epidermal inclusion cyst": "pic_img/msk-44-033.jpg", "Seborrheic keratosis": "pic_img/msk-44-031.jpg"},
             "title": "Benign Cysts and Growths",
             "subtitle": "Match each lesion to its key clue and its treatment",
             "categories": ["Key clue", "Treatment"],
@@ -92,6 +95,7 @@ BRICK = {
         },
         {
             "slug": "vascular_lesions_and_keloids",
+            "images": {"Infantile hemangioma": "pic_img/msk-44-034.jpg", "Capillary malformation": "pic_img/msk-44-035.jpg"},
             "title": "Vascular Lesions and Keloids",
             "subtitle": "Compare each lesion's onset, natural course and treatment",
             "categories": ["Onset", "Natural course", "Treatment or association"],

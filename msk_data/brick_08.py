@@ -69,6 +69,7 @@ BRICK = {
         },
         {
             "slug": "bone_disorder_hallmarks",
+            "images": {"Rickets": "pic_img/bopic-060.jpg"},
             "title": "Hallmarks of Acquired Bone Disorders",
             "subtitle": "Match each disorder to its core defect, hallmark finding and treatment",
             "categories": ["Core defect", "Hallmark finding", "Treatment"],

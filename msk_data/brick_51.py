@@ -4,6 +4,7 @@ BRICK = {
     "games": [
         {
             "slug": "cutaneous_lupus_types",
+            "images": {"Acute cutaneous LE": "pic_img/msk-51-025.jpg", "Subacute cutaneous LE": "pic_img/msk-51-026.jpg", "Discoid (chronic cutaneous) LE": "pic_img/msk-51-027.jpg"},
             "title": "Three Forms of Cutaneous Lupus",
             "subtitle": "Match each form of cutaneous lupus to its lesion, serology and link to SLE",
             "categories": ["Typical lesion", "Serology", "Link to SLE", "Key treatment point"],
@@ -36,6 +37,7 @@ BRICK = {
         },
         {
             "slug": "dermatomyositis_signs",
+            "images": {"Heliotrope rash": "pic_img/msk-51-029.jpg", "Gottron's papules": "pic_img/msk-51-030.jpg"},
             "title": "Dermatomyositis Signs and Subtypes",
             "subtitle": "Match each dermatomyositis finding to where it appears and what it signals",
             "categories": ["Description or location", "Significance"],
@@ -68,6 +70,7 @@ BRICK = {
         },
         {
             "slug": "scleroderma_forms",
+            "images": {"Localized (morphea)": "pic_img/msk-51-031.jpg"},
             "title": "Three Forms of Scleroderma vs Dermatomyositis",
             "subtitle": "Compare diffuse, limited and localized scleroderma (and dermatomyositis) by skin extent, features, antibody and treatment",
             "categories": ["Skin involvement", "Hallmark features", "Antibody", "Treatment"],
@@ -100,6 +103,7 @@ BRICK = {
         },
         {
             "slug": "purpura_and_mimics",
+            "images": {"Leukocytoclastic vasculitis": "pic_img/msk-51-032.jpg", "Antiphospholipid antibody syndrome": "pic_img/msk-51-028.jpg", "Henoch-Schonlein purpura": "pic_img/capic-133.jpg"},
             "title": "Palpable Purpura and Its Mimics",
             "subtitle": "Match each vascular disorder to its mechanism, skin clue and confirming test",
             "categories": ["Mechanism", "Skin clue", "Key workup"],

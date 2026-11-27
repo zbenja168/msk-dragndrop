@@ -4,6 +4,7 @@ BRICK = {
     "games": [
         {
             "slug": "melanoma_subtypes",
+            "images": {"Superficial spreading melanoma": "pic_img/msk-43-034.jpg", "Nodular melanoma": "pic_img/msk-43-035.jpg", "Acral lentiginous melanoma": "pic_img/msk-43-036.jpg", "Amelanotic melanoma": "pic_img/msk-43-039.jpg"},
             "title": "Melanoma Subtypes",
             "subtitle": "Match each subtype to its frequency, presentation and prognosis",
             "categories": ["Frequency", "Classic presentation", "Prognosis or behavior"],

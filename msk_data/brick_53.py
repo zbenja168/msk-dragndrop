@@ -4,6 +4,7 @@ BRICK = {
     "games": [
         {
             "slug": "non_scarring_alopecias",
+            "images": {"Alopecia areata": "pic_img/msk-53-033.jpg", "Trichotillomania": "pic_img/msk-53-034.jpg"},
             "title": "Non-scarring Alopecias",
             "subtitle": "Match each non-scarring alopecia to its key clinical clue, mechanism and treatment",
             "categories": ["Key clinical clue", "Mechanism or cause", "Treatment"],
@@ -42,6 +43,7 @@ BRICK = {
         },
         {
             "slug": "scarring_alopecias",
+            "images": {"Discoid lupus erythematosus": "pic_img/msk-53-035.jpg"},
             "title": "Scarring Alopecias",
             "subtitle": "Match each scarring alopecia to its typical site or patient, hallmark finding and treatment",
             "categories": ["Typical site or patient", "Hallmark finding", "Treatment"],
@@ -75,6 +77,7 @@ BRICK = {
         },
         {
             "slug": "nail_signs_of_systemic_disease",
+            "images": {"Splinter hemorrhages (multiple digits)": "pic_img/msk-53-036.jpg", "Half and half nails": "pic_img/msk-53-038.jpg", "Clubbing": "pic_img/repic-461.jpg"},
             "title": "Nail Signs of Systemic Disease",
             "subtitle": "Match each nail finding to its appearance and its most common underlying cause",
             "categories": ["Appearance", "Most common underlying cause"],

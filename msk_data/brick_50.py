@@ -4,6 +4,7 @@ BRICK = {
     "games": [
         {
             "slug": "psoriasis_subtypes",
+            "images": {"Plaque psoriasis": "pic_img/msk-50-023.jpg", "Guttate psoriasis": "pic_img/msk-50-027.jpg", "Inverse psoriasis": "pic_img/msk-50-028.jpg", "Generalized pustular psoriasis": "pic_img/msk-50-029.jpg", "Erythrodermic psoriasis": "pic_img/msk-50-030.jpg"},
             "title": "Five Presentations of Psoriasis",
             "subtitle": "Match each psoriasis subtype to its lesions, typical sites and trigger or treatment clue",
             "categories": ["Lesions", "Typical sites", "Trigger or treatment clue"],
@@ -37,6 +38,7 @@ BRICK = {
         },
         {
             "slug": "psoriasis_signs_and_histology",
+            "images": {"Auspitz sign": "pic_img/msk-50-025.jpg", "Koebner phenomenon": "pic_img/msk-50-024.jpg", "Nail psoriasis": "pic_img/msk-50-026.jpg"},
             "title": "Signs and Histology of Psoriasis",
             "subtitle": "Match each finding to what it is and why it matters",
             "categories": ["What is seen", "Significance"],

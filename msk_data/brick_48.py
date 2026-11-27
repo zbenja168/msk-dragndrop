@@ -4,6 +4,7 @@ BRICK = {
     "games": [
         {
             "slug": "dermatitis_types",
+            "images": {"Atopic dermatitis": "pic_img/msk-48-026.jpg", "Seborrheic dermatitis": "pic_img/msk-48-029.jpg", "Allergic contact dermatitis": "pic_img/msk-48-030.jpg", "Stasis dermatitis": "pic_img/msk-48-032.jpg"},
             "title": "Types of Dermatitis Compared",
             "subtitle": "Match each dermatitis to its mechanism, typical look and site, and treatment",
             "categories": ["Mechanism or cause", "Typical appearance and site", "Treatment"],
@@ -93,6 +94,7 @@ BRICK = {
         },
         {
             "slug": "signs_and_eczema_variants",
+            "images": {"Dennie-Morgan fold": "pic_img/msk-48-028.jpg"},
             "title": "Signs and Eczema Variants",
             "subtitle": "Match each finding to what it looks like and where it appears",
             "categories": ["Appearance", "Where it is seen"],

@@ -4,6 +4,7 @@ BRICK = {
     "games": [
         {
             "slug": "wheal_lookalikes",
+            "images": {"Urticarial wheal": "pic_img/msk-49-025.jpg", "Angioedema": "pic_img/msk-49-026.jpg"},
             "title": "Wheals and Their Look-Alikes",
             "subtitle": "Match each entity to its presentation, time course and key point",
             "categories": ["Presentation", "Time course", "Key point"],
